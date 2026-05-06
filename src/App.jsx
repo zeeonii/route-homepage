@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { curationItems, filters, navSections } from "./data/content";
 
 const SPLASH_DURATION = 2000;
+const baseUrl = import.meta.env.BASE_URL;
+const routeLogoSrc = `${baseUrl}route-logo.png`;
+const routeIconSrc = `${baseUrl}route-icon.png`;
 
 function LogoWordmark({ light = false }) {
   return (
     <img
       className="logo-wordmark"
-      src="/route-logo.png"
+      src={routeLogoSrc}
       alt="RouTe"
     />
   );
@@ -94,7 +97,7 @@ function HomeScreen() {
         <div className="search-overlay" role="dialog" aria-modal="true" aria-label="검색창">
           <div className="search-panel">
             <div className="search-input-wrap">
-              <img className="search-logo" src="/route-icon.png" alt="RouTe 아이콘" />
+              <img className="search-logo" src={routeIconSrc} alt="RouTe 아이콘" />
               <input
                 className="search-input"
                 type="search"
